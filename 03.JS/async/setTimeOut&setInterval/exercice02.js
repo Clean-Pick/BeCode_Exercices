@@ -24,8 +24,7 @@ function pickRandomNumber() {
 }
 
 function failureTimer() {
-    timeOut = setTimeout(() => failure(), 10000)
-    return timeOut
+    setTimeout(() => failure(), 10000)
 }
 
 function failure() {
@@ -65,7 +64,7 @@ function ready() {
 }
 
 function start() {
-    rl.question("Your guess : " , (answer) => {
+    rl.question("Your guess : ", (answer) => {
         if (answer != number) {
             console.log("-----------------------------------")
             console.log("Try again !")
@@ -75,7 +74,6 @@ function start() {
             console.log("                You win !")
             console.log("================ WINNER ================")
             win = true
-            clearTimeout(timeOut)
             return userInterface()
         }
     })
@@ -103,5 +101,7 @@ Please type "Yes" or "no".`)
         }
     )
 }
+
+// TODO: sortir des rl.questions pour l'exécution des fonctions.
 
 userInterface()
